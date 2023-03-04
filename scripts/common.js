@@ -13,6 +13,18 @@ $(window).on('load', function()
 /* hide video === end */
 
 
+$(".profileunlocks .profileunlockinner .profileunlockright ul li").click(function()
+{
+    var getDataID = $(this).attr('data-id');
+    $(".profileunlocks .profileunlockinner .profileunlockleft div img").fadeOut(300);
+    $(".profileunlocks .profileunlockinner .profileunlockright ul li").removeClass("active");
+    $(this).addClass("active");
+    $(".profileunlocks .profileunlockinner .profileunlockleft div img[data-id='"+getDataID+"']").fadeIn(300);
+
+    
+});
+
+
   
 // social slider   === start 
 $(function($) 
