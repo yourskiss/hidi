@@ -19,7 +19,7 @@ $('.talentslideRow1, .talentslideRow2').slick({
     autoplay: true,
     autoplaySpeed: 0,
     centerMode: false,
-    centerPadding: '0',
+    centerPadding: '15',
     cssEase: 'linear',
     slidesToShow:4,
     slidesToScroll:1,
@@ -45,7 +45,7 @@ $('.talentslideRow1, .talentslideRow2').slick({
                 },
                 {
                     breakpoint: 479,
-                    settings: { slidesToShow:1 }
+                    settings: { centerPadding: '10', slidesToShow:1 }
                 } 
             ]
   });
