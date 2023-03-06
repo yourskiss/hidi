@@ -33,6 +33,8 @@ $('.talentslideRow1, .talentslideRow2').slick({
     pauseOnFocus: false,
     accessibility: false,
     draggable: false,
+    swipe: false,
+    touchMove: false,
     responsive:
             [ 
                 {
