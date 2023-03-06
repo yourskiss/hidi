@@ -12,15 +12,6 @@ $(window).on('load', function()
 });
 
 
-
-$(".profileunlocks .profileunlockinner .profileunlockright ul li").click(function()
-{
-    var getDataID = $(this).attr('data-id');
-    $(".profileunlocks .profileunlockinner .profileunlockleft div img").fadeOut(250);
-    $(".profileunlocks .profileunlockinner .profileunlockright ul li").removeClass("active");
-    $(this).addClass("active");
-    $(".profileunlocks .profileunlockinner .profileunlockleft div img[data-id='"+getDataID+"']").fadeIn(400);  
-});
  
 
 $('.talentslideRow1, .talentslideRow2').slick({
