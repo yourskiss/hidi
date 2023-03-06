@@ -22,7 +22,7 @@
                 <img src="images/logo.png" alt="logo" />
             </a>
             <aside>
-                <a href="javascript:void(0);"><span>Get Early Access</span></a>
+                <a href="javascript:void(0);" onclick="formShowHide('show');"><span>Get Early Access</span></a>
             </aside>
         </div>
     </header>
@@ -424,7 +424,7 @@
                 </li>
             </ul>
             <aside>
-                <a href="javascript:void(0)"><span>Get Early Access</span></a>
+                <a href="javascript:void(0)" onclick="formShowHide('show');"><span>Get Early Access</span></a>
             </aside>
         </div>
     </section>
@@ -499,6 +499,60 @@
     <div><i class="fa fa-spinner fa-spin"></i></div>
 </div>
 <!-- loader === end -->
+
+
+
+<!-- early access form === start -->
+<div class="earlyAccessPopup" id="earlyAccessForm">
+    <article onclick="formShowHide('hide');"></article>
+    <section>
+            <aside onclick="formShowHide('hide');">X</aside>
+            <h2>We’re accepting <span>10K</span> early-birds<br>into our exclusive talent network!</h2>
+            <div class="formfield">
+                <p class="formfieldLablehead">Name</p>
+                <input class="formfieldInput" type="text" name="fullname" id="fullname"  onkeypress="return isLetter(event);" />
+                <span class="formfieldError" id="fullname_errormsg">Please enter your name</span>
+            </div>
+            <div class="formfield">
+                <p class="formfieldLablehead">Email</p>
+                <input class="formfieldInput" type="text" name="emailaddress" id="emailaddress"  />
+                <span class="formfieldError" id="emailaddress_errormsg">Please enter  email address</span>
+            </div>
+            <div class="formfield">
+                <p class="formfieldLablehead">Industry</p>
+                <input class="formfieldInput" type="text" name="industry" id="industry" onkeypress="return isLetter(event);" />
+                <span class="formfieldError" id="industry_errormsg">Please enter industry</span>
+            </div>
+            <div class="formfield">
+                <p class="formfieldLablehead">Designation</p>
+                <input class="formfieldInput" type="text" name="designation" id="designation" onkeypress="return isLetter(event);" />
+                <span class="formfieldError" id="designation_errormsg">Please enter designation</span>
+            </div>
+            <h3>How can <span>Q-Profile</span> boost your career?</h3>
+            <div class="formbox">
+                <input type="checkbox" id="jobopportunities" name="checkvalue[]" value="1" />
+                <label for="jobopportunities" class="formLabel">Job Opportunities</label>
+            </div>
+            <div class="formbox">
+                <input type="checkbox" id="networking" name="checkvalue[]" value="2"  />
+                <label for="networking" class="formLabel">Networking</label>
+            </div>
+            <div class="formbox">
+                <input type="checkbox" id="microconsulting" name="checkvalue[]" value="3"  />
+                <label for="microconsulting" class="formLabel">Micro-Consulting</label>
+            </div>
+            <div class="formbox">
+                <input type="checkbox" id="learning" name="checkvalue[]" value="4"  />
+                <label for="learning" class="formLabel">Learning</label>
+            </div>
+            <div class="formboxerror" id="formbox_error">Please select any one</div>
+            <div class="formbottom">
+                <span class="formButton" onclick="formValidation();"><b>Get Early Access</b></span>
+            </div>
+    </section>
+</div>
+<!-- early access form === end -->
+
 
  
  

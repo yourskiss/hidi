@@ -6,13 +6,96 @@ $(window).on('orientationchange', function ()
 /* page refresh on orientation change === END */
  
 
-$(window).on('load', function() 
+function formShowHide(val)
 {
+    if(val =="show")
+    {
+        $("#earlyAccessForm").fadeIn(500);
+        $("body").css('overflow','hidden');
+    }
+    else if(val =="hide")
+    {
+        $("#earlyAccessForm").fadeOut(500);
+        $("body").css('overflow','scroll');
+    }
+    else
+    {
+        // nothing
+    }
+}
+
+/* validation === start */
+function formValidation()
+{
+    // debugger;
+    var emailReg = /( )|(^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$)/;
+    $(".formfieldError, .formboxerror").hide().html('');
+    if($("#fullname").val() == '')
+    {
+        $("#fullname_errormsg").show().html('Please enter your name');
+        return false;
+    }
+    else if($("#emailaddress").val() == '')
+    {
+        $("#emailaddress_errormsg").show().html('Please enter your email id');
+        return false;
+    }
+    else if ($("#emailaddress").val() != "" && !emailReg.test($("#emailaddress").val())) 
+    {
+        $("#emailaddress_errormsg").show().html('Please enter valid email id');
+        return false;
+    }
+    else if($("#industry").val() == '')
+    {
+        $("#industry_errormsg").show().html('Please enter industry name');
+        return false;
+    }
+    else if($("#designation").val() == '')
+    {
+        $("#designation_errormsg").show().html('Please enter your designation');
+        return false;
+    }
+    else if(!$("#jobopportunities").prop('checked') && !$("#networking").prop('checked') && !$("#microconsulting").prop('checked') && !$("#learning").prop('checked'))
+    {
+        $("#formbox_error").show().html('Please select any one');
+    }
+    else 
+    {
+        // var value =  $('.formbox input[type=checkbox]:checked').map(function() { return this.value; }).get().join(',');
+        // console.log(value);
+
+        formShowHide('hide');
+        $(".formfieldError, .formboxerror").hide().html('');
+        return true;
+    }
+}
+/* validation === end */
+
  
-});
+// only number validation === start
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+// only number validation === end
+
+// only Letter validation === start
+function isLetter(e) 
+{
+    var regex = new RegExp("^[a-zA-Z ]+$");
+    var strigChar = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+    if (regex.test(strigChar)) {
+        return true;
+    }
+    return false
+}
+// only Letter validation === end
 
 
- 
 
 $('.talentslideRow1, .talentslideRow2').slick({
     speed: 6000,
