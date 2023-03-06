@@ -40,7 +40,7 @@ $('.talentslideRow1, .talentslideRow2').slick({
                     settings: { slidesToShow:3 }
                 },
                 {
-                    breakpoint: 767,
+                    breakpoint: 1023,
                     settings: { slidesToShow:2 }
                 },
                 {
