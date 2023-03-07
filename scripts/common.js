@@ -4,7 +4,10 @@ $(window).on('orientationchange', function ()
     location.reload(true);
 });
 /* page refresh on orientation change === END */
- 
+
+
+
+
 
 /* thanks popup === start */
 function thanksShowHide(val)
@@ -83,6 +86,12 @@ function formValidation()
     }
     else 
     {
+        var todayDT = new Date();
+        var date = todayDT.getFullYear()+'-'+(todayDT.getMonth()+1)+'-'+todayDT.getDate();
+        var time= todayDT.getHours() + ":" + todayDT.getMinutes() + ":" + todayDT.getSeconds();
+        var dateTime = date+' '+ time;
+        $("#datetime").val(dateTime);
+
             // var value =  $('.formbox input[type=checkbox]:checked').map(function() { return this.value; }).get().join(',');
             let form = document.querySelector("form");
             form.addEventListener('submit', (e) => {
@@ -90,7 +99,7 @@ function formValidation()
                 $("#pageloader").show();
                 formShowHide('hide');
                 let data = new FormData(form);
-                fetch('https://script.google.com/macros/s/AKfycby8AZO4D_zZiWWGtlCvQ4HKZ7HRxzWaBKF_uEMiPNOdoe2m3BiiB4TKDJBgfZiUvk8/exec', {
+                fetch('https://script.google.com/macros/s/AKfycbx_cGH-ArDiVKvGKRAW_UESE3RWAmPfv1bmcVdnZ0gDC6NNnzoDALNq8I6p_4JMSwE/exec', {
                         method: "POST",
                         body: data
                     })

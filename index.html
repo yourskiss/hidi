@@ -520,6 +520,7 @@
         <section>
             <aside onclick="formShowHide('hide');">X</aside>
             <h2>We’re accepting <span>10K</span> early-birds<br>into our exclusive talent network!</h2>
+            
             <div class="formfield">
                 <p class="formfieldLablehead">Name</p>
                 <input class="formfieldInput" type="text" name="name" id="fullname"  onkeypress="return isLetter(event);" />
@@ -559,6 +560,7 @@
             </div>
             <div class="formboxerror" id="formbox_error">Please select any one</div>
             <div class="formbottom">
+                <input type="hidden" name="datetime" id="datetime" />
                 <input type="submit" name="submit" class="formButton" onclick="return formValidation();" value="Get Early Access" /> 
             </div>
         </section>
