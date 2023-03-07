@@ -83,7 +83,7 @@ function formValidation()
     }
     else 
     {
-        // var value =  $('.formbox input[type=checkbox]:checked').map(function() { return this.value; }).get().join(',');
+            // var value =  $('.formbox input[type=checkbox]:checked').map(function() { return this.value; }).get().join(',');
             let form = document.querySelector("form");
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -101,9 +101,8 @@ function formValidation()
                     })
                     .catch(error => console.error('Error!', error.message))
             });   
- 
-        $(".formfieldError, .formboxerror").hide().html('');
-        return true;
+            $(".formfieldError, .formboxerror").hide().html('');
+            return true;
     }
 }
 /* validation === end */
