@@ -496,7 +496,7 @@
 
 <!-- loader === start -->
 <div id="pageloader" class="pageloader">
-    <div><i class="fa fa-spinner fa-spin"></i></div>
+    <div><img src="images/slick-loader.gif" alt="loader" /></div>
 </div>
 <!-- loader === end -->
 
@@ -513,18 +513,18 @@
 
 <!-- early access form === start -->
 <div class="earlyAccessPopup" id="earlyAccessForm">
-    <form method="post">
+    <form id="form">
         <section>
             <aside onclick="formShowHide('hide');">X</aside>
             <h2>We’re accepting <span>10K</span> early-birds<br>into our exclusive talent network!</h2>
             <div class="formfield">
                 <p class="formfieldLablehead">Name</p>
-                <input class="formfieldInput" type="text" name="fullname" id="fullname"  onkeypress="return isLetter(event);" />
+                <input class="formfieldInput" type="text" name="name" id="fullname"  onkeypress="return isLetter(event);" />
                 <span class="formfieldError" id="fullname_errormsg">Please enter your name</span>
             </div>
             <div class="formfield">
                 <p class="formfieldLablehead">Email</p>
-                <input class="formfieldInput" type="text" name="emailaddress" id="emailaddress"  />
+                <input class="formfieldInput" type="text" name="email" id="emailaddress"  />
                 <span class="formfieldError" id="emailaddress_errormsg">Please enter  email address</span>
             </div>
             <div class="formfield">
@@ -539,24 +539,24 @@
             </div>
             <h3>How can <span>Q-Profile</span> boost your career?</h3>
             <div class="formbox">
-                <input type="checkbox" id="jobopportunities" name="checkvalue[]" value="jobopportunities" />
+                <input type="checkbox" id="jobopportunities" name="jobopportunities" value="yes" />
                 <label for="jobopportunities" class="formLabel">Job Opportunities</label>
             </div>
             <div class="formbox">
-                <input type="checkbox" id="networking" name="checkvalue[]" value="networking"  />
+                <input type="checkbox" id="networking" name="networking" value="yes"  />
                 <label for="networking" class="formLabel">Networking</label>
             </div>
             <div class="formbox">
-                <input type="checkbox" id="microconsulting" name="checkvalue[]" value="microconsulting"  />
+                <input type="checkbox" id="microconsulting" name="microconsulting" value="yes"  />
                 <label for="microconsulting" class="formLabel">Micro-Consulting</label>
             </div>
             <div class="formbox">
-                <input type="checkbox" id="learning" name="checkvalue[]" value="learning"  />
+                <input type="checkbox" id="learning" name="learning" value="yes"  />
                 <label for="learning" class="formLabel">Learning</label>
             </div>
             <div class="formboxerror" id="formbox_error">Please select any one</div>
             <div class="formbottom">
-                <span class="formButton" onclick="formValidation();"><b>Get Early Access</b></span>
+                <input type="submit" name="submit" class="formButton" onclick="formValidation();" value="Get Early Access" /> 
             </div>
         </section>
     </form>
@@ -571,6 +571,7 @@
 <script src="scripts/slick.min.js"></script>
 <script src="scripts/common.js"></script>
 
+ 
 </body>
 </html>
  

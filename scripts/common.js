@@ -84,10 +84,24 @@ function formValidation()
     else 
     {
         // var value =  $('.formbox input[type=checkbox]:checked').map(function() { return this.value; }).get().join(',');
-        // console.log(value);
-
-        formShowHide('hide');
-        thanksShowHide('show');
+            let form = document.querySelector("form");
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                $("#pageloader").show();
+                formShowHide('hide');
+                let data = new FormData(form);
+                fetch('https://script.google.com/macros/s/AKfycby8AZO4D_zZiWWGtlCvQ4HKZ7HRxzWaBKF_uEMiPNOdoe2m3BiiB4TKDJBgfZiUvk8/exec', {
+                        method: "POST",
+                        body: data
+                    })
+                    .then(res => res.text())
+                    .then(data => {
+                        $("#pageloader").hide();  
+                        thanksShowHide('show');
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            });   
+ 
         $(".formfieldError, .formboxerror").hide().html('');
         return true;
     }
