@@ -6,6 +6,27 @@ $(window).on('orientationchange', function ()
 /* page refresh on orientation change === END */
  
 
+/* thanks popup === start */
+function thanksShowHide(val)
+{
+    if(val =="show")
+    {
+        $("#earlyAccessThanks").fadeIn(500);
+        $("body").css('overflow','hidden');
+    }
+    else if(val =="hide")
+    {
+        $("#earlyAccessThanks").fadeOut(500);
+        $("body").css('overflow','scroll');
+    }
+    else
+    {
+        // nothing
+    }
+}
+/* thanks popup === END */
+
+/* form popup === start */
 function formShowHide(val)
 {
     if(val =="show")
@@ -23,6 +44,7 @@ function formShowHide(val)
         // nothing
     }
 }
+/* form popup  === END */
 
 /* validation === start */
 function formValidation()
@@ -65,6 +87,7 @@ function formValidation()
         // console.log(value);
 
         formShowHide('hide');
+        thanksShowHide('show');
         $(".formfieldError, .formboxerror").hide().html('');
         return true;
     }
